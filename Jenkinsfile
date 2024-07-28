@@ -4,7 +4,7 @@ pipeline {
     tools {
         maven 'Maven' // Adjust as per your Maven version
         jdk 'JDK21' // Adjust as per your JDK version
-        git 'Git' // Name you configured in the Jenkins global tool configuration
+        git 'Git'
     }
 
     environment {
@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Publish Allure Report') {
             steps {
-                allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
+                allure includeProperties: false, results: [[path: 'target/allure-results']]
             }
         }
     }
