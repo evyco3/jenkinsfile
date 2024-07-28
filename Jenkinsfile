@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven' // Adjust as per your Maven installation name in Jenkins
-        jdk 'JDK21'  // Adjust as per your JDK installation name in Jenkins
+        maven 'Maven' // Adjust as per your Maven version
+        jdk 'JDK21' // Adjust as per your JDK version
     }
 
     environment {
@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/evyco3/jenkinsfile.git', credentialsId: "${GITHUB_CREDENTIALS}"
+                git url: 'https://github.com/evyco3/jenkinsfile.git', branch: 'evy', credentialsId: 'evy'
             }
         }
         stage('Build and Test') {
