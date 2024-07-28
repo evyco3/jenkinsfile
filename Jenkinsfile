@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/evyco3/jenkinsfile.git', credentialsId: 'github-credentials'
+                git url: 'https://github.com/evyco3/jenkinsfile.git', credentialsId: 'evy'
             }
         }
         stage('Build and Test') {
