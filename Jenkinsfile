@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.6.3' // Adjust as per your Maven version
-        jdk 'Java 1.8' // Adjust as per your JDK version
+        maven 'Maven' // Adjust as per your Maven version
+        jdk 'JDK21' // Adjust as per your JDK version
     }
 
     stages {
