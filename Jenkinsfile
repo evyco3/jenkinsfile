@@ -6,10 +6,14 @@ pipeline {
         jdk 'JDK21' // Adjust as per your JDK version
     }
 
+    environment {
+        GITHUB_CREDENTIALS = credentials('evy') // Replace with your Jenkins credential ID for GitHub
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-repo-name.git'
+                git url: 'https://github.com/evyco3/jenkinsfile.git', credentialsId: "${GITHUB_CREDENTIALS}"
             }
         }
         stage('Build and Test') {
